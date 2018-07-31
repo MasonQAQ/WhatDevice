@@ -2,8 +2,7 @@
 
 from PluginManager import Model_CMS
 import requests
-import os
-from Utils import calculate_md5
+import hashlib
 
 
 class Dedecms(Model_CMS):
@@ -12,19 +11,14 @@ class Dedecms(Model_CMS):
     author = "h4ck3r007"
 
     def detect(self, target):
-        flag = False
         detect_url = target + "/plus/img/dfpic.gif"
         res = requests.get(detect_url)
-        if res.status_code == 200:
-            with open('Temp/dedecms.jpg', 'a+') as file:
-                file.write(res.content)
-                file.flush()
-                md5sum = calculate_md5(file)
-                if md5sum == "d41d8cd98f00b204e9800998ecf8427e":
-                    flag = True
-            file.close()
-            os.remove("Temp/dedecms.jpg")
-        return flag
+        if res.status_code != 200:
+            return False
+        md5sum = hashlib.md5(res.text.encode("utf-8")).hexdigest()
+        if md5sum == "53ec2a55c702dcce530b258fd1d96308":
+            return True
+        return False
 
 
 

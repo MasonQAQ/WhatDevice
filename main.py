@@ -2,18 +2,56 @@
 
 from PluginManager import PluginManager
 from PluginManager import Model_CMS
+from Crawler import Crawler
 
-if __name__ == '__main__':
-    # 加载所有插件
-    PluginManager.LoadAllPlugin()
+# load plugins
+PluginManager.LoadAllPlugin()
+plugins = Model_CMS.GetPluginObject()
 
-    target = "http://www.wellidc.net" #phpcms
-    target = "http://www.dedecms.com" #dedecms
-    target = "http://www.dstex.cn/" #ecshop
-    target = "http://bbs.heilanhome.com" #discuz
+'''
+url test, 主要验证下别人的指纹哪些能够访问到，作为自己识别指纹的参考
+'''
+def url_test():
+    target = "http://www.discuz.net/"
+    file = open("fingerprint")
+    import requests
+    for line in file:
+        url = target + line
+        # print(url.strip())
+        res = requests.get(url.strip())
+        print("[" + str(res.status_code) + "]" + line.strip())
+    file.close()
 
-    plugins = Model_CMS.GetPluginObject()
+
+'''
+单个url测试
+'''
+def single_test():
+    # target = "http://www.wellidc.net" #phpcms
+    target = "http://www.dedecms.com"  # dedecms
+    # target = "http://www.dstex.cn/" #ecshop
+    # target = "http://bbs.heilanhome.com/" #discuz
+    # target = "https://zhidao.baidu.com/"#
 
     for plugin in plugins:
         if plugin.detect(target):
             print(target + " : " + plugin.name)
+
+'''
+爬虫自动化采集测试
+'''
+def crawler_multi_test():
+    keyword = "powered by discuz"
+    url_list = Crawler.baidu_search(keyword=keyword)
+    for target in url_list:
+        for plugin in plugins:
+            if plugin.detect(target):
+                print(target + " : " + plugin.name)
+
+
+if __name__ == '__main__':
+    # url_test()
+    single_test()
+    # crawler_multi_test()
+
+
