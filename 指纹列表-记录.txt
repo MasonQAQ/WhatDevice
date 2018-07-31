@@ -62,7 +62,7 @@
 []-- /  200 -
 []-- /install/images/bg_repno.gif  
 []-- /data/upload/item_orig/50af2537b3674.jpg  
-[]-- /api.php  
+[phpcms]-- /api.php
 []-- /js/MyFormValidation.js  
 []-- /file/script/color.js  
 []-- /common/help/images/checkmail_08_zh.gif  
