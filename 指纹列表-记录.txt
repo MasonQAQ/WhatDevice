@@ -1,121 +1,121 @@
-# get from http://whatweb.bugscaner.com/
+# Get from http://whatweb.bugscaner.com/
 # 看下这些url都是用于识别什么cms的，如果发现了，记录到括号中
 
 
-[通用]--"GET /favicon.ico HTTP/1.1" 404 -
-[通用]--"GET /robots.txt HTTP/1.1" 404 -
-[]--"GET /安装说明.txt HTTP/1.1" 404 -
-[]--"GET /readme.txt HTTP/1.1" 404 -
-[]--"GET /images/logo.gif HTTP/1.1" 404 -
-[]--"GET /js/jquery.js HTTP/1.1" 404 -
-[]--"GET /license.txt HTTP/1.1" 404 -
-[]--"GET /install/style.css HTTP/1.1" 404 -
-[]--"GET /js/common.js HTTP/1.1" 404 -
-[]--"GET /install/images/style.css HTTP/1.1" 404 -
-[]--"GET /install/images/logo.gif HTTP/1.1" 404 -
-[]--"GET /css/style.css HTTP/1.1" 404 -
-[]--"GET /images/logo.jpg HTTP/1.1" 404 -
-[]--"GET /install/data.sql HTTP/1.1" 404 -
-[]--"GET /使用说明.txt HTTP/1.1" 404 -
-[]--"GET /images/more.gif HTTP/1.1" 404 -
-[]--"GET /images/search.gif HTTP/1.1" 404 -
-[]--"GET /htaccess.txt HTTP/1.1" 404 -
-[]--"GET /includes/general.js HTTP/1.1" 404 -
-[]--"GET /js/calendar/calendar.js HTTP/1.1" 404 -
-[]--"GET /images/nopic.gif HTTP/1.1" 404 -
-[]--"GET /install/images/loading.gif HTTP/1.1" 404 -
-[]--"GET /js/admin.js HTTP/1.1" 404 -
-[]--"GET /images/star.gif HTTP/1.1" 404 -
-[]--"GET /images/logo.png HTTP/1.1" 404 -
-[]--"GET /install/css/install.css HTTP/1.1" 404 -
-[]--"GET /JDWM/js/jdwm.js HTTP/1.1" 404 -
-[]--"GET /inc/admin.js HTTP/1.1" 404 -
-[]--"GET /app/article/js/extend.func.js HTTP/1.1" 404 -
-[]--"GET /install.txt HTTP/1.1" 404 -
-[]--"GET /data/fonts/verdana.ttf HTTP/1.1" 404 -
-[]--"GET /Admin/Tpl/default/Common/return.htm HTTP/1.1" 404 -
-[]--"GET /theme/default/config.xml HTTP/1.1" 404 -
-[]--"GET /install/images/bg_stepstatus.gif HTTP/1.1" 404 -
-[]--"GET /Scripts/Html.js HTTP/1.1" 404 -
-[]--"GET /Scripts/Message.js HTTP/1.1" 404 -
-[wordpress]--"GET /wp-content/languages/zh_CN-word-count.js HTTP/1.1" 404 -
-[]--"GET /ewebeditor/KindEditor.js HTTP/1.1" 404 -
-[dedecms]--"GET /plus/img/dfpic.gif HTTP/1.1" 404 -
-[]--"GET /advfile/ad21.js HTTP/1.1" 404 -
-[]--"GET /js/form.js HTTP/1.1" 404 -
-[]--"GET /images/bg01.png HTTP/1.1" 404 -
-[]--"GET /class/xmlparser.php HTTP/1.1" 404 -
-[]--"GET /language/client/zh-cn/main.lang.js HTTP/1.1" 404 -
-[]--"GET /Admin/Tpl/default/Common/foot.htm HTTP/1.1" 404 -
-[]--"GET /images/new.gif HTTP/1.1" 404 -
-[]--"GET /res/jeecms/img/admin/top_07.jpg HTTP/1.1" 404 -
-[]--"GET /sitemap.xml HTTP/1.1" 404 -
-[]--"GET /plugins/widgets/kf/default.html HTTP/1.1" 404 -
-[]--"GET /core/admin/view/content/widgets/widgetsCenter.html HTTP/1.1" 404 -
-[]--"GET /Edit.css HTTP/1.1" 404 -
-[]--"GET /static/css/admin/bgimg/tv-collapsable.gif HTTP/1.1" 404 -
-[]--"GET /js/navScroll.js HTTP/1.1" 404 -
-[]--"GET /search/test.txt HTTP/1.1" 404 -
-[]--"GET /data/admin_array.inc HTTP/1.1" 404 -
-[]--"GET /data/css/arrow-down-title.jpg HTTP/1.1" 404 -
-[]--"GET /api/checkorder.php HTTP/1.1" 404 -
-[]--"GET / HTTP/1.1" 200 -
-[]--"GET /install/images/bg_repno.gif HTTP/1.1" 404 -
-[]--"GET /data/upload/item_orig/50af2537b3674.jpg HTTP/1.1" 404 -
-[]--"GET /api.php HTTP/1.1" 404 -
-[]--"GET /js/MyFormValidation.js HTTP/1.1" 404 -
-[]--"GET /file/script/color.js HTTP/1.1" 404 -
-[]--"GET /common/help/images/checkmail_08_zh.gif HTTP/1.1" 404 -
-[]--"GET /install/images/bg_repx.gif HTTP/1.1" 404 -
-[]--"GET /include/dialog/img/sp_bg.gif HTTP/1.1" 404 -
-[]--"GET /cn/images/40.png HTTP/1.1" 404 -
-[]--"GET /celive/js/common.js HTTP/1.1" 404 -
-[]--"GET /static/js/swfupload.queue.js HTTP/1.1" 404 -
-[]--"GET /rss.php HTTP/1.1" 404 -
-[]--"GET /_data/avatar/0_l.jpg HTTP/1.1" 404 -
-[]--"GET /data/flash_ad/ad_1/bcastr.swf HTTP/1.1" 404 -
-[]--"GET /images/banners/osmbanner2.png HTTP/1.1" 404 -
-[]--"GET /include/javascript/getmypaytraderecord.js HTTP/1.1" 404 -
-[]--"GET /Inc/menu.js HTTP/1.1" 404 -
-[]--"GET /data/adflash.txt HTTP/1.1" 404 -
-[]--"GET /sitemap.xsl HTTP/1.1" 404 -
-[]--"GET /app/message/skins/default/style.css HTTP/1.1" 404 -
-[]--"GET /e/d/slide_7.js HTTP/1.1" 404 -
-[]--"GET /template/default/refreshto.htm HTTP/1.1" 404 -
-[]--"GET /images/pixel_trans.gif HTTP/1.1" 404 -
-[]--"GET /include/js/md5.js HTTP/1.1" 404 -
-[]--"GET /images/spacer.gif HTTP/1.1" 404 -
-[]--"GET /images/usercp_usergroups.gif HTTP/1.1" 404 -
-[]--"GET /catalog/view/theme/default/image/warning.png HTTP/1.1" 404 -
-[]--"GET /content/templates/default/images/att.png HTTP/1.1" 404 -
-[]--"GET /feed.asp HTTP/1.1" 404 -
-[]--"GET /api/js/jishigou.js HTTP/1.1" 404 -
-[]--"GET /data/smiliey/default/shy.gif HTTP/1.1" 404 -
-[]--"GET /js/ajax.js HTTP/1.1" 404 -
-[]--"GET /template/default/thumb.gif HTTP/1.1" 404 -
-[]--"GET /feed.php HTTP/1.1" 404 -
-[]--"GET /inc/lsansdi.ttf HTTP/1.1" 404 -
-[]--"GET /effect/js/transform.js HTTP/1.1" 404 -
-[]--"GET /e/css/zoom.css HTTP/1.1" 404 -
-[]--"GET /public/tinyMCE/tiny_mce.js HTTP/1.1" 404 -
-[]--"GET /alipay.html HTTP/1.1" 404 -
-[]--"GET /css/AC_RunActiveContent.js HTTP/1.1" 404 -
-[]--"GET /readme.html HTTP/1.1" 404 -
-[]--"GET /images/minus.gif HTTP/1.1" 404 -
-[wordpress]--"GET /wp-admin/admin-footer.php HTTP/1.1" 404 -
-[]--"GET /install/images/stepnum.gif HTTP/1.1" 404 -
-[]--"GET /inc/script/common.js HTTP/1.1" 404 -
-[]--"GET /sitemap/templates/met/css/style.css HTTP/1.1" 404 -
-[]--"GET /Admin/css/Hishopv5.css HTTP/1.1" 404 -
-[]--"GET /templates/default/js/jquery.QSdialog.js HTTP/1.1" 404 -
-[]--"GET /js/Album.js HTTP/1.1" 404 -
-[]--"GET /rss.asp HTTP/1.1" 404 -
-[]--"GET /app/mobile/icon.png HTTP/1.1" 404 -
-[]--"GET /install/images/bg_footer.gif HTTP/1.1" 404 -
-[]--"GET /include/qq.js HTTP/1.1" 404 -
-[]--"GET /cycle_image.php HTTP/1.1" 404 -
-[]--"GET /log/dberrorlog.php HTTP/1.1" 404 -
-[]--"GET /r/cms/focus1.swf HTTP/1.1" 404 -
-[]--"GET /httpd.ini HTTP/1.1" 404 -
-[]--"GET /images/nav_class_program.gif HTTP/1.1" 404 -
-[]--"GET /version.php HTTP/1.1" 404 -
+[通用]-- /favicon.ico  
+[通用]-- /robots.txt  
+[]-- /安装说明.txt  
+[]-- /readme.txt  
+[]-- /images/logo.gif  
+[]-- /js/jquery.js  
+[]-- /license.txt  
+[]-- /install/style.css  
+[]-- /js/common.js  
+[]-- /install/images/style.css  
+[]-- /install/images/logo.gif  
+[]-- /css/style.css  
+[]-- /images/logo.jpg  
+[]-- /install/data.sql  
+[]-- /使用说明.txt  
+[]-- /images/more.gif  
+[]-- /images/search.gif  
+[]-- /htaccess.txt  
+[]-- /includes/general.js  
+[]-- /js/calendar/calendar.js  
+[]-- /images/nopic.gif  
+[]-- /install/images/loading.gif  
+[]-- /js/admin.js  
+[]-- /images/star.gif  
+[]-- /images/logo.png  
+[]-- /install/css/install.css  
+[]-- /JDWM/js/jdwm.js  
+[]-- /inc/admin.js  
+[]-- /app/article/js/extend.func.js  
+[]-- /install.txt  
+[]-- /data/fonts/verdana.ttf  
+[]-- /Admin/Tpl/default/Common/return.htm  
+[]-- /theme/default/config.xml  
+[]-- /install/images/bg_stepstatus.gif  
+[]-- /Scripts/Html.js  
+[]-- /Scripts/Message.js  
+[wordpress]-- /wp-content/languages/zh_CN-word-count.js  
+[]-- /ewebeditor/KindEditor.js  
+[dedecms]-- /plus/img/dfpic.gif  
+[]-- /advfile/ad21.js  
+[]-- /js/form.js  
+[]-- /images/bg01.png  
+[]-- /class/xmlparser.php  
+[]-- /language/client/zh-cn/main.lang.js  
+[]-- /Admin/Tpl/default/Common/foot.htm  
+[]-- /images/new.gif  
+[]-- /res/jeecms/img/admin/top_07.jpg  
+[]-- /sitemap.xml  
+[]-- /plugins/wids/kf/default.html  
+[]-- /core/admin/view/content/wids/widsCenter.html  
+[]-- /Edit.css  
+[]-- /static/css/admin/bgimg/tv-collapsable.gif  
+[]-- /js/navScroll.js  
+[]-- /search/test.txt  
+[]-- /data/admin_array.inc  
+[]-- /data/css/arrow-down-title.jpg  
+[]-- /api/checkorder.php  
+[]-- /  200 -
+[]-- /install/images/bg_repno.gif  
+[]-- /data/upload/item_orig/50af2537b3674.jpg  
+[]-- /api.php  
+[]-- /js/MyFormValidation.js  
+[]-- /file/script/color.js  
+[]-- /common/help/images/checkmail_08_zh.gif  
+[]-- /install/images/bg_repx.gif  
+[]-- /include/dialog/img/sp_bg.gif  
+[]-- /cn/images/40.png  
+[]-- /celive/js/common.js  
+[]-- /static/js/swfupload.queue.js  
+[]-- /rss.php  
+[]-- /_data/avatar/0_l.jpg  
+[]-- /data/flash_ad/ad_1/bcastr.swf  
+[]-- /images/banners/osmbanner2.png  
+[]-- /include/javascript/mypaytraderecord.js  
+[]-- /Inc/menu.js  
+[]-- /data/adflash.txt  
+[]-- /sitemap.xsl  
+[]-- /app/message/skins/default/style.css  
+[]-- /e/d/slide_7.js  
+[]-- /template/default/refreshto.htm  
+[]-- /images/pixel_trans.gif  
+[]-- /include/js/md5.js  
+[]-- /images/spacer.gif  
+[]-- /images/usercp_usergroups.gif  
+[]-- /catalog/view/theme/default/image/warning.png  
+[]-- /content/templates/default/images/att.png  
+[]-- /feed.asp  
+[]-- /api/js/jishigou.js  
+[]-- /data/smiliey/default/shy.gif  
+[]-- /js/ajax.js  
+[]-- /template/default/thumb.gif  
+[]-- /feed.php  
+[]-- /inc/lsansdi.ttf  
+[]-- /effect/js/transform.js  
+[]-- /e/css/zoom.css  
+[]-- /public/tinyMCE/tiny_mce.js  
+[]-- /alipay.html  
+[]-- /css/AC_RunActiveContent.js  
+[]-- /readme.html  
+[]-- /images/minus.gif  
+[wordpress]-- /wp-admin/admin-footer.php  
+[]-- /install/images/stepnum.gif  
+[]-- /inc/script/common.js  
+[]-- /sitemap/templates/met/css/style.css  
+[]-- /Admin/css/Hishopv5.css  
+[]-- /templates/default/js/jquery.QSdialog.js  
+[]-- /js/Album.js  
+[]-- /rss.asp  
+[]-- /app/mobile/icon.png  
+[]-- /install/images/bg_footer.gif  
+[]-- /include/qq.js  
+[]-- /cycle_image.php  
+[]-- /log/dberrorlog.php  
+[]-- /r/cms/focus1.swf  
+[]-- /httpd.ini  
+[]-- /images/nav_class_program.gif  
+[]-- /version.php  
