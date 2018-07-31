@@ -10,7 +10,10 @@ class Ecshop(Model_CMS):
 
     def detect(self, target):
         detect_url = target + "/api/checkorder.php"
-        res = requests.get(detect_url).text
+        res = requests.get(detect_url)
+        if res.status_code != 200:
+            return False
+        res = res.text
         if "new_orders" in res and "new_paid" in res:
             return True
         return False

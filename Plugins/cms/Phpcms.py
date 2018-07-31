@@ -11,6 +11,8 @@ class Phpcms(Model_CMS):
     def detect(self, target):
         detect_url = target + "/api.php?op=ojbk"
         res = requests.get(detect_url)
+        if res.status_code != 200:
+            return False
         if res.text == "API handler does not exist":
             return True
         return False

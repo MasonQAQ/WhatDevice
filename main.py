@@ -10,6 +10,7 @@ if __name__ == '__main__':
     target = "http://www.wellidc.net" #phpcms
     target = "http://www.dedecms.com" #dedecms
     target = "http://www.dstex.cn/" #ecshop
+    target = "http://bbs.heilanhome.com" #discuz
 
     plugins = Model_CMS.GetPluginObject()
 
