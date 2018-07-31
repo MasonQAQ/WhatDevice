@@ -2,10 +2,6 @@
 
 from PluginManager import Model_CMS
 import requests
-import os
-
-from Utils import calculate_md5
-
 
 class Phpcms(Model_CMS):
     name = "phpcms"
@@ -17,6 +13,7 @@ class Phpcms(Model_CMS):
         res = requests.get(detect_url)
         if res.text == "API handler does not exist":
             return True
+        return False
 
 
 

@@ -7,8 +7,9 @@ if __name__ == '__main__':
     # 加载所有插件
     PluginManager.LoadAllPlugin()
 
-    target = "http://www.wellidc.net"
-    target = "http://www.zkwuan.com"
+    target = "http://www.wellidc.net" #phpcms
+    target = "http://www.dedecms.com" #dedecms
+    target = "http://www.dstex.cn/" #ecshop
 
     plugins = Model_CMS.GetPluginObject()
 

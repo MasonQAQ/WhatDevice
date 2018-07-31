@@ -1,7 +1,7 @@
 import requests
 
 
-target = "http://www.wellidc.net"
+target = "http://www.dstex.cn/"
 file = open("fingerprint")
 for line in file:
     url = target + line
