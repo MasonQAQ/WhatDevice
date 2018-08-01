@@ -3,6 +3,7 @@ import os
 import sys
 from imp import find_module
 from imp import load_module
+import requests
 
 class PluginManager(type):
     #静态变量配置插件路径
@@ -84,6 +85,14 @@ class PluginManager(type):
 #插件框架的接入点。便于管理各个插件。各个插件通过继承接入点类，利用Python中metaclass的优势，将插件注册。接入点中定义了各个插件模块必须要实现的接口。
 class Model_CMS(object):
     __metaclass__ = PluginManager
+
+    def __init__(self):
+        self.cms_requests = requests.Session()
+        self.cms_requests.headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) '
+                                                   'AppleWebKit/537.36 (KHTML, like Gecko) ''Chrome/63.0.3239.108 '
+                                                   'Safari/537.36'}
+        self.cms_requests.verify = False
+        self.cms_request_timeout = 5
 
     def detect(self, target):
         print 'what cms!'

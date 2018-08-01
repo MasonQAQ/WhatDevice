@@ -4,6 +4,8 @@ from PluginManager import PluginManager
 from PluginManager import Model_CMS
 from Crawler import Crawler
 
+import requests
+
 # load plugins
 PluginManager.LoadAllPlugin()
 plugins = Model_CMS.GetPluginObject()
@@ -11,6 +13,8 @@ plugins = Model_CMS.GetPluginObject()
 '''
 url test, 主要验证下别人的指纹哪些能够访问到，作为自己识别指纹的参考
 '''
+
+
 def url_test():
     target = "http://www.discuz.net/"
     file = open("fingerprint")
@@ -26,6 +30,8 @@ def url_test():
 '''
 单个url测试
 '''
+
+
 def single_test():
     # target = "http://www.wellidc.net" #phpcms
     target = "http://www.dedecms.com"  # dedecms
@@ -33,13 +39,23 @@ def single_test():
     # target = "http://bbs.heilanhome.com/" #discuz
     # target = "https://zhidao.baidu.com/"#
 
+    try:
+        requests.get(target)
+    except:
+        print "[HTTPConnectionError] " + target
+        exit(0)
+
     for plugin in plugins:
-        if plugin.detect(target):
+        detect_res = plugin.detect(target)
+        if detect_res:
             print(target + " : " + plugin.name)
+
 
 '''
 爬虫自动化采集测试
 '''
+
+
 def crawler_multi_test():
     keyword = "powered by discuz"
     url_list = Crawler.baidu_search(keyword=keyword)
@@ -53,5 +69,3 @@ if __name__ == '__main__':
     # url_test()
     single_test()
     # crawler_multi_test()
-
-
