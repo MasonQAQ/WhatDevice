@@ -58,7 +58,7 @@ def single_test():
 
 def crawler_multi_test():
     keyword = "powered by discuz"
-    url_list = Crawler.baidu_search(keyword=keyword)
+    url_list = Crawler.baidu_search(keyword=keyword, page=2)
     for target in url_list:
         for plugin in plugins:
             if plugin.detect(target):
@@ -67,5 +67,5 @@ def crawler_multi_test():
 
 if __name__ == '__main__':
     # url_test()
-    single_test()
-    # crawler_multi_test()
+    # single_test()
+    crawler_multi_test()

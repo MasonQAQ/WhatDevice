@@ -1,9 +1,11 @@
 # coding=utf-8
 import os
 import sys
+import urllib3
 from imp import find_module
 from imp import load_module
 import requests
+
 
 class PluginManager(type):
     #静态变量配置插件路径
@@ -87,6 +89,7 @@ class Model_CMS(object):
     __metaclass__ = PluginManager
 
     def __init__(self):
+        requests.packages.urllib3.disable_warnings()
         self.cms_requests = requests.Session()
         self.cms_requests.headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) '
                                                    'AppleWebKit/537.36 (KHTML, like Gecko) ''Chrome/63.0.3239.108 '
