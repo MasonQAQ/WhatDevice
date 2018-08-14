@@ -1,7 +1,6 @@
 # coding=utf-8
 import os
 import sys
-import urllib3
 from imp import find_module
 from imp import load_module
 import requests

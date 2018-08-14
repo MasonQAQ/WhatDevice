@@ -13,6 +13,7 @@ class Dedecms(Model_CMS):
         Model_CMS.__init__(self)
 
     def detect(self, target):
+        # /data/admin/ver.txt
         detect_url = target + "/plus/img/dfpic.gif"
         res = self.cms_requests.get(detect_url, timeout=self.cms_request_timeout)
         if res.status_code != 200:
