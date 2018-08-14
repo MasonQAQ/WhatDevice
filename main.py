@@ -38,7 +38,7 @@ def url_test():
 
 def single_test():
     # target = "http://www.wellidc.net" #phpcms
-    target = "http://scs.ucas.ac.cn"  # dedecms
+    target = "http://scs.ucas.ac.cn"  # joomla
     # target = "http://www.dstex.cn/" #ecshop
     # target = "http://bbs.heilanhome.com/" #discuz
     # target = "https://zhidao.baidu.com/"#
@@ -52,7 +52,7 @@ def single_test():
     for plugin in plugins:
         detect_res = plugin.detect(target)
         if detect_res:
-            print(target + " : " + plugin.name)
+            print(target + "\ncms : " + plugin.name + "\nversion: " + plugin.version(target))
 
 
 '''

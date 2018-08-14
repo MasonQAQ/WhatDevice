@@ -23,5 +23,10 @@ class Dedecms(Model_CMS):
             return True
         return False
 
-
+    def version(self, target):
+        version_url = target + "/data/admin/ver.txt"
+        res = self.cms_requests.get(version_url, timeout=self.cms_request_timeout)
+        if res.status_code != 200:
+            return Model_CMS.version(self, target)
+        return res.text
 

@@ -98,9 +98,11 @@ class Model_CMS(object):
 
     def detect(self, target):
         print 'what cms!'
-
+    def version(self, target):
+        return "unknown version"
     def vul_detect(self):
         print 'what vuls the site has!'
+
 
 class Model_Other(object):
     __metaclass__ = PluginManager
