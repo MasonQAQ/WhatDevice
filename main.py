@@ -38,7 +38,7 @@ def url_test():
 
 def single_test():
     # target = "http://www.wellidc.net" #phpcms
-    target = "http://www.microeagle.cn"  # dedecms
+    target = "http://scs.ucas.ac.cn"  # dedecms
     # target = "http://www.dstex.cn/" #ecshop
     # target = "http://bbs.heilanhome.com/" #discuz
     # target = "https://zhidao.baidu.com/"#
