@@ -7,6 +7,7 @@ from Crawler import Crawler
 import pytesseract
 from PIL import Image
 from lxml import etree
+import dns.resolver
 
 import requests
 
@@ -103,15 +104,16 @@ def ip2domain(ip):
 
 
 
+
 if __name__ == '__main__':
     # url_test()
 
     # target = "http://www.wellidc.net" #phpcms
     # target = "http://scs.ucas.ac.cn/"  # joomla
     # target = "http://www.dedecms.com/" # dedecms
-    target = "http://www.ecshop119.com/" #ecshop
+    # target = "http://www.ecshop119.com/" #ecshop
     # target = "http://bbs.heilanhome.com/" #discuz
     # target = "https://zhidao.baidu.com/"#
+    target = "http://www.jouning-blower.com/"
     single_test(target)
-
-    #crawler_multi_test()
+    # crawler_multi_test()
