@@ -17,4 +17,7 @@ class Ecshop(Model_CMS):
         return False
 
     def version(self, target, index_content=""):
-        return re.findall(r'<meta name="Generator" content="ECSHOP (.+?)" />', index_content)[0]
+        arr = re.findall(r'<meta name="Generator" content="ECSHOP (.+?)" />', index_content)
+        if len(arr) > 0:
+            return arr[0]
+        return Model_CMS.version(self, target, index_content)
