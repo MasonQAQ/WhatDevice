@@ -104,15 +104,11 @@ class Model_CMS(object):
         print 'what vuls the site has!'
 
 
-class Model_Other(object):
+class Model_Header(object):
     __metaclass__ = PluginManager
 
-    def detect(self):
-        print '用于扩展的插件接口'
-
-    def vul_detect(self):
+    def get(self, header):
         print '用于扩展的插件接口'
 
 
-
-__ALLMODEL__ = (Model_CMS, Model_Other)
+# __ALLMODEL__ = (Model_CMS, Model_Header)

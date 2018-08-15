@@ -11,11 +11,7 @@ class Joomla(Model_CMS):
         Model_CMS.__init__(self)
 
     def detect(self, target, index_content=""):
-        detect_url = target + "/index.php/component/ajax?format=json"
-        res = self.cms_requests.get(detect_url, timeout=self.cms_request_timeout)
-        if res.status_code != 200:
-            return False
-        if res.text.strip() == '{"success":true,"message":null,"messages":null,"data":null}':
+        if 'content="Joomla! - Open Source Content Management"' in index_content:
             return True
         return False
 
