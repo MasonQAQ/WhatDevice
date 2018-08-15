@@ -10,7 +10,7 @@ class Joomla(Model_CMS):
     def __init__(self):
         Model_CMS.__init__(self)
 
-    def detect(self, target):
+    def detect(self, target, index_content=""):
         detect_url = target + "/index.php/component/ajax?format=json"
         res = self.cms_requests.get(detect_url, timeout=self.cms_request_timeout)
         if res.status_code != 200:
@@ -19,7 +19,7 @@ class Joomla(Model_CMS):
             return True
         return False
 
-    def version(self, target):
+    def version(self, target, index_content=""):
         version_url = target + "/administrator/manifests/files/joomla.xml"
         res = self.cms_requests.get(version_url, timeout=self.cms_request_timeout)
         if res.status_code != 200:

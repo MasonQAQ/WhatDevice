@@ -12,7 +12,7 @@ class Dedecms(Model_CMS):
     def __init__(self):
         Model_CMS.__init__(self)
 
-    def detect(self, target):
+    def detect(self, target,index_content=""):
         # /data/admin/ver.txt
         detect_url = target + "/plus/img/dfpic.gif"
         res = self.cms_requests.get(detect_url, timeout=self.cms_request_timeout)
@@ -23,7 +23,7 @@ class Dedecms(Model_CMS):
             return True
         return False
 
-    def version(self, target):
+    def version(self, target, index_content=""):
         version_url = target + "/data/admin/ver.txt"
         res = self.cms_requests.get(version_url, timeout=self.cms_request_timeout)
         if res.status_code != 200:

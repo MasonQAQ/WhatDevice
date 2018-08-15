@@ -10,7 +10,7 @@ class Discuz(Model_CMS):
     def __init__(self):
         Model_CMS.__init__(self)
 
-    def detect(self, target):
+    def detect(self, target, index_content=""):
         detect_url = target + "/static/js/swfupload.queue.js"
         res = self.cms_requests.get(detect_url, timeout=self.cms_request_timeout)
         if res.status_code != 200:

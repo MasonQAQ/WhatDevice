@@ -6,7 +6,6 @@ from Crawler import Crawler
 import pytesseract
 from PIL import Image
 from lxml import etree
-import IPy
 
 import requests
 
@@ -38,21 +37,22 @@ def url_test():
 
 def single_test():
     # target = "http://www.wellidc.net" #phpcms
-    target = "http://scs.ucas.ac.cn"  # joomla
-    # target = "http://www.dstex.cn/" #ecshop
+    # target = "http://www.joomlachina.cn"  # joomla
+    target = "http://www.dstex.cn/" #ecshop
     # target = "http://bbs.heilanhome.com/" #discuz
     # target = "https://zhidao.baidu.com/"#
 
+    index_content = ""
     try:
-        requests.get(target)
+        index_content = requests.get(target).content
     except:
         print "[HTTPConnectionError] " + target
         exit(0)
 
     for plugin in plugins:
-        detect_res = plugin.detect(target)
+        detect_res = plugin.detect(target, index_content)
         if detect_res:
-            print(target + "\ncms : " + plugin.name + "\nversion: " + plugin.version(target))
+            print(target + "\ncms : " + plugin.name + "\nversion: " + plugin.version(target, index_content))
 
 
 '''

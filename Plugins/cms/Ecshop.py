@@ -1,6 +1,7 @@
 # coding=utf-8
 
 from PluginManager import Model_CMS
+import re
 
 class Ecshop(Model_CMS):
     name = "ecshop"
@@ -10,12 +11,10 @@ class Ecshop(Model_CMS):
     def __init__(self):
         Model_CMS.__init__(self)
 
-    def detect(self, target):
-        detect_url = target + "/api/checkorder.php"
-        res = self.cms_requests.get(detect_url,timeout=self.cms_request_timeout)
-        if res.status_code != 200:
-            return False
-        res = res.text
-        if "new_orders" in res and "new_paid" in res:
+    def detect(self, target, index_content=""):
+        if 'content="ECSHOP' in index_content:
             return True
         return False
+
+    def version(self, target, index_content=""):
+        return re.findall(r'<meta name="Generator" content="ECSHOP (.+?)" />', index_content)[0]

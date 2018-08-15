@@ -96,9 +96,9 @@ class Model_CMS(object):
         self.cms_requests.verify = False
         self.cms_request_timeout = 5
 
-    def detect(self, target):
+    def detect(self, target, index_content=""):
         print 'what cms!'
-    def version(self, target):
+    def version(self, target, index_content=""):
         return "unknown version"
     def vul_detect(self):
         print 'what vuls the site has!'
